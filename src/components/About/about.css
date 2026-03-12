@@ -1,0 +1,219 @@
+#about {
+    margin: 0 auto;
+    width: 100vw;
+    max-width: 75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 13rem;
+}
+
+.aboutContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.aboutContent {
+    flex: 1;
+    text-align: center;
+}
+
+.aboutLabel {
+    color: #0099ff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.aboutTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.aboutDescription {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #666666;
+    margin-bottom: 2rem;
+}
+
+.aboutTabs {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.tabBtn {
+    background: none;
+    border: none;
+    color: #666666;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tabBtn:hover {
+    color: #1a1a1a;
+}
+
+.tabBtn.active {
+    color: #ff004f;
+    border-bottom-color: #ff004f;
+}
+
+.skillsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skillTagWithLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.skillTagWithLogo:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 0, 79, 0.05);
+}
+
+.skillTag {
+    display: inline-block;
+    background: white;
+    color: #333;
+    padding: 0.6rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.skillTag:hover {
+    transform: translateY(-3px);
+    border-color: #ff004f;
+    color: #ff004f;
+    box-shadow: 0 5px 15px rgba(255, 0, 79, 0.15);
+}
+
+.experienceList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.experienceItem {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #ff004f;
+    text-align: left;
+}
+
+.experienceItem h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.experienceItem p {
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .aboutContainer {
+        gap: 2rem;
+    }
+
+    .aboutImage img {
+        max-width: 300px;
+    }
+
+    .aboutTitle {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #about {
+        min-height: auto;
+        padding: 4rem 1rem;
+    }
+
+    .aboutContainer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .aboutImage img {
+        max-width: 250px;
+    }
+
+    .aboutTitle {
+        font-size: 1.8rem;
+    }
+
+    .aboutDescription {
+        font-size: 0.9rem;
+    }
+
+    .aboutTabs {
+        gap: 1rem;
+    }
+
+    .tabBtn {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutTitle {
+        font-size: 1.5rem;
+    }
+
+    .aboutImage img {
+        max-width: 200px;
+    }
+
+    .aboutTabs {
+        gap: 0.75rem;
+    }
+
+    .skillName,
+    .skillPercentage {
+        font-size: 0.85rem;
+    }
+}

@@ -1,0 +1,118 @@
+#works {
+    margin: 0 auto;
+    min-height: calc(100vh - 4rem);
+    width: 100vw;
+    max-width: 65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.worksTitle {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.worksDesc {
+    font-weight: 400;
+    font-size: 1rem;
+    max-width: 45rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.worksImgs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.worksImgContainer {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 300px;
+    height: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    /* Remove underline for anchor */
+    color: inherit;
+    /* Inherit color */
+    display: block;
+    /* Ensure it takes dimensions */
+    cursor: pointer;
+}
+
+.worksImgContainer:hover {
+    transform: translateY(-5px);
+}
+
+.worksImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.worksLayer {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(20, 19, 19, 0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 0.9rem;
+    transition: height 0.5s;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    /* Ensure text is white */
+}
+
+.worksImgContainer:hover .worksLayer {
+    opacity: 1;
+}
+
+.worksLayer h3 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.workBtn {
+    margin: 3rem 0;
+    padding: 0.8rem 2.5rem;
+    border-radius: 2rem;
+    border: none;
+    background: #1a1a1a;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.workBtn:active {
+    background: #333333;
+}
+
+@media screen and (max-width: 720px) {
+    .worksImgContainer {
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+    }
+}

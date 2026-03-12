@@ -1,0 +1,66 @@
+#contactPage {
+    min-height: calc(100vh - 4rem);
+    width: 100vw;
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactPageTitle {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contactDesc {
+    padding: 1rem;
+    font-size: medium;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.contactLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.contactLink {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background: #f5f5f5;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.contactLink:hover {
+    background: white;
+    border-color: #ff004f;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: #ff004f;
+}
+
+.contactIcon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 720px) {
+    .contactLink {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+}

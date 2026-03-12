@@ -1,0 +1,164 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modalContent {
+    background: #ffffff;
+    border-radius: 1rem;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 3rem;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #ffffff;
+    color: rgb(40, 40, 40);
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.closeBtn:hover {
+    background: #e0e0e0;
+}
+
+.blogPost {
+    color: #333333;
+}
+
+.blogHeader {
+    margin-bottom: 2rem;
+}
+
+.blogHeaderImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.blogPost h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.blogMeta {
+    font-size: 0.95rem;
+    color: #ff004f;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.blogPost section {
+    margin-bottom: 2rem;
+}
+
+.blogPost h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.blogPost h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.blogPost p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.blogPost ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.blogPost li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    color: #333333;
+}
+
+.blogImage {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    object-fit: cover;
+    max-height: 350px;
+}
+
+/* Scrollbar styling */
+.modalContent::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 10px;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+}
+
+@media (max-width: 768px) {
+    .modalContent {
+        padding: 2rem;
+        max-height: 90vh;
+    }
+
+    .blogPost h1 {
+        font-size: 1.8rem;
+    }
+
+    .blogPost h2 {
+        font-size: 1.4rem;
+    }
+
+    .closeBtn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.2rem;
+    }
+}
