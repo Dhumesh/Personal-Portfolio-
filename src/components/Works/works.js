@@ -8,6 +8,7 @@ import Portfolio4 from '../../img/portfolio-4.png';
 import Portfolio5 from '../../img/portfolio-5.png';
 import Portfolio6 from '../../img/portfolio-6.png';
 import Portfolio7 from '../../img/portfolio-7.png';
+import Portfolio8 from '../../img/portofolio-8.png';
 
 const Works = () => {
   const [showMore, setShowMore] = useState(false);
@@ -61,6 +62,13 @@ const Works = () => {
       title: "Collaborative Note-Taking App",
       description: "A MERN note-taking app with JWT auth, search, collaborators, and a rich text editor.",
       link: "https://github.com/Dhumesh/Note-Taking-web-app.git"
+    },
+    {
+      id: 8,
+      image: Portfolio8,
+      title: "Personal Portfolio",
+      description: "A responsive React portfolio with smooth navigation, project highlights, and contact details.",
+      link: null
     }
   ];
 
