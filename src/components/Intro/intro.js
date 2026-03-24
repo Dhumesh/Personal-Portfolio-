@@ -1,6 +1,5 @@
 import React from 'react';
 import './intro.css';
-import bg from '../../img/my2.png';
 
 const Intro = () => {
   return (
@@ -24,9 +23,6 @@ const Intro = () => {
         >
           <button className="btn">Let&apos;s Connect</button>
         </a>
-      </div>
-      <div className="introMedia">
-        <img src={bg} alt="Profile" className="bg" />
       </div>
     </section>
   );
