@@ -60,7 +60,7 @@ const Works = () => {
       image: Portfolio7,
       title: "Collaborative Note-Taking App",
       description: "A MERN note-taking app with JWT auth, search, collaborators, and a rich text editor.",
-      link: null
+      link: "https://github.com/Dhumesh/Note-Taking-web-app.git"
     }
   ];
 
