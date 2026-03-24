@@ -7,6 +7,7 @@ import Portfolio3 from '../../img/portfolio-3.png';
 import Portfolio4 from '../../img/portfolio-4.png';
 import Portfolio5 from '../../img/portfolio-5.png';
 import Portfolio6 from '../../img/portfolio-6.png';
+import Portfolio7 from '../../img/portfolio-7.png';
 
 const Works = () => {
   const [showMore, setShowMore] = useState(false);
@@ -53,10 +54,17 @@ const Works = () => {
       title: "Universal Site Updater",
       description: "A lightweight PHP tool for syncing and updating website files without a database, compatible with shared hosting.",
       link: "https://github.com/Dhumesh/Universal-Site-Updater.git"
+    },
+    {
+      id: 7,
+      image: Portfolio7,
+      title: "Collaborative Note-Taking App",
+      description: "A MERN note-taking app with JWT auth, search, collaborators, and a rich text editor.",
+      link: null
     }
   ];
 
-  const displayedProjects = showMore ? projects : projects.slice(0, 3);
+  const displayedProjects = showMore ? projects : projects.slice(0, 4);
 
   return (
     <section id='works'>
@@ -76,7 +84,7 @@ const Works = () => {
                 <p>{project.description}</p>
               </div>
             </Link>
-          ) : (
+          ) : project.link ? (
             <a
               key={project.id}
               href={project.link}
@@ -90,6 +98,14 @@ const Works = () => {
                 <p>{project.description}</p>
               </div>
             </a>
+          ) : (
+            <div key={project.id} className="worksImgContainer">
+              <img src={project.image} alt={project.title} className="worksImg" />
+              <div className="worksLayer">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+              </div>
+            </div>
           )
         ))}
       </div>
