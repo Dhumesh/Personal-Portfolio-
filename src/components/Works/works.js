@@ -68,11 +68,11 @@ const Works = () => {
       image: Portfolio8,
       title: "Personal Portfolio",
       description: "A responsive React portfolio with smooth navigation, project highlights, and contact details.",
-      link: null
+      link: "https://github.com/Dhumesh/Personal-Portfolio-.git"
     }
   ];
 
-  const displayedProjects = showMore ? projects : projects.slice(0, 4);
+  const displayedProjects = showMore ? projects : projects.slice(0, 3);
 
   return (
     <section id='works'>
