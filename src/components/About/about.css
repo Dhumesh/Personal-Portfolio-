@@ -1,11 +1,11 @@
 #about {
     margin: 0 auto;
-    width: 100vw;
+    width: 100%;
     max-width: 75rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 13rem;
+    padding: 8rem 1.5rem 3rem;
 }
 
 .aboutContainer {
@@ -192,6 +192,7 @@
 
     .aboutTabs {
         gap: 1rem;
+        flex-wrap: wrap;
     }
 
     .tabBtn {
@@ -209,11 +210,22 @@
     }
 
     .aboutTabs {
+        width: 100%;
         gap: 0.75rem;
+        justify-content: center;
     }
 
     .skillName,
     .skillPercentage {
         font-size: 0.85rem;
+    }
+
+    .tabBtn {
+        font-size: 0.82rem;
+    }
+
+    .skillTag {
+        padding: 0.55rem 1rem;
+        font-size: 0.82rem;
     }
 }

@@ -1,6 +1,6 @@
 #contactPage {
     min-height: calc(100vh - 4rem);
-    width: 100vw;
+    width: 100%;
     max-width: 60rem;
     margin: 0 auto;
     text-align: center;
@@ -62,5 +62,23 @@
     .contactLink {
         font-size: 1rem;
         padding: 0.8rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #contactPage {
+        min-height: auto;
+        padding: 2rem 1rem 3rem;
+    }
+
+    .contactPageTitle {
+        font-size: 2rem;
+    }
+
+    .contactLink {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        word-break: break-word;
     }
 }

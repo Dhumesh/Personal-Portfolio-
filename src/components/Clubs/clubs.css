@@ -1,7 +1,7 @@
 #clubs {
     margin: 0 auto;
     min-height: calc(100vh - 4rem);
-    width: 100vw;
+    width: 100%;
     max-width: 75rem;
     display: flex;
     flex-direction: column;
@@ -173,6 +173,10 @@
 }
 
 @media (max-width: 480px) {
+    #clubs {
+        padding: 2rem 1rem;
+    }
+
     .clubsTitle {
         font-size: 1.5rem;
     }
@@ -186,19 +190,19 @@
     }
 
     .clubCard {
-        width: 130px;
+        width: min(100%, 16rem);
     }
 
     .clubImageCircle {
-        width: 90px;
-        height: 90px;
+        width: 96px;
+        height: 96px;
     }
 
     .clubCard h3 {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .clubDescription {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 }

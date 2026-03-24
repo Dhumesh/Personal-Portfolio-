@@ -42,7 +42,7 @@ const Navbar = () => {
         </Link>
         <Link
           className="listItem"
-          to="skills"
+          to="about"
           smooth={true}
           duration={500}
           onClick={() => setShowMenu(false)}

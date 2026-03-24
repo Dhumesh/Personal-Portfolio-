@@ -1,7 +1,7 @@
 #certificates {
     margin: 0 auto;
     min-height: calc(100vh - 4rem);
-    width: 100vw;
+    width: 100%;
     max-width: 75rem;
     display: flex;
     flex-direction: column;
@@ -207,6 +207,11 @@
 }
 
 @media (max-width: 768px) {
+    #certificates {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+
     .certificatesTitle {
         font-size: 2rem;
     }
@@ -231,6 +236,24 @@
         width: 2rem;
         height: 2rem;
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .certificatesCarouselContainer {
+        gap: 0.75rem;
+    }
+
+    .certificateCarouselCard {
+        width: min(100%, 18rem);
+    }
+
+    .certificateCardImage {
+        height: 180px;
+    }
+
+    .certificateCardContent {
+        padding: 0.9rem;
     }
 }
 

@@ -30,9 +30,6 @@
     font-weight: 700;
     line-height: 1.05;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
 }
 
 .introName {
@@ -56,9 +53,9 @@
 .introMedia {
     flex: 0 1 24rem;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
-    align-self: stretch;
+    align-self: flex-start;
 }
 
 .bg {
@@ -104,6 +101,7 @@
         width: 100%;
         flex-basis: auto;
         justify-content: center;
+        align-self: center;
     }
 
     .bg {

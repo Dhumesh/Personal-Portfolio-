@@ -3,6 +3,7 @@ import './clubs.css';
 
 const Clubs = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(4);
 
   const clubs = [
     {
@@ -55,14 +56,39 @@ const Clubs = () => {
     }
   ];
 
+  useEffect(() => {
+    const updateVisibleCards = () => {
+      if (window.innerWidth <= 640) {
+        setVisibleCards(1);
+      } else if (window.innerWidth <= 960) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(4);
+      }
+    };
+
+    updateVisibleCards();
+    window.addEventListener('resize', updateVisibleCards);
+
+    return () => window.removeEventListener('resize', updateVisibleCards);
+  }, []);
+
   // Auto-play carousel
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex === clubs.length - 4 ? 0 : prevIndex + 1));
+      const maxIndex = Math.max(clubs.length - visibleCards, 0);
+      setCurrentIndex((prevIndex) => (prevIndex >= maxIndex ? 0 : prevIndex + 1));
     }, 4000); // Change slide every 4 seconds
     
     return () => clearInterval(interval);
-  }, [clubs.length]);
+  }, [clubs.length, visibleCards]);
+
+  useEffect(() => {
+    const maxIndex = Math.max(clubs.length - visibleCards, 0);
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(maxIndex);
+    }
+  }, [clubs.length, currentIndex, visibleCards]);
 
   return (
     <section id="clubs">
@@ -72,7 +98,7 @@ const Clubs = () => {
       <div className="clubsCarouselContainer">
         {/* Carousel Cards */}
         <div className="clubsCarousel">
-          {clubs.slice(currentIndex, currentIndex + 4).map((club) => (
+          {clubs.slice(currentIndex, currentIndex + visibleCards).map((club) => (
             <div key={club.id} className="clubCard">
               <div className="clubImageCircle">
                 <img src={club.image} alt={club.name} />

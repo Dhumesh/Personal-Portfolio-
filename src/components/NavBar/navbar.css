@@ -1,7 +1,7 @@
 .navbar{
     background: #ffffff;
     height: 5rem;
-    width: 100vw;
+    width: 100%;
     max-width: 75rem;
     margin: 0 auto;
     padding: 1rem 2rem;
@@ -160,8 +160,9 @@
     
     .navMenu{
         right: 1rem;
-        min-width: calc(100vw - 2rem);
-        max-width: calc(100vw - 2rem);
+        left: 1rem;
+        min-width: auto;
+        max-width: none;
     }
     
     .listItem{

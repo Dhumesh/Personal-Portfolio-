@@ -1,7 +1,7 @@
 #works {
     margin: 0 auto;
     min-height: calc(100vh - 4rem);
-    width: 100vw;
+    width: 100%;
     max-width: 65rem;
     display: flex;
     flex-direction: column;
@@ -110,9 +110,38 @@
 }
 
 @media screen and (max-width: 720px) {
+    #works {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .worksTitle {
+        font-size: 2rem;
+    }
+
+    .worksDesc {
+        margin-bottom: 2rem;
+    }
+
     .worksImgContainer {
         width: 100%;
         max-width: 350px;
         height: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .worksTitle {
+        font-size: 1.75rem;
+    }
+
+    .worksLayer {
+        padding: 0 1rem;
+        font-size: 0.82rem;
+    }
+
+    .workBtn {
+        width: 100%;
+        max-width: 14rem;
     }
 }
