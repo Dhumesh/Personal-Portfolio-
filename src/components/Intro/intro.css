@@ -1,79 +1,132 @@
 #intro {
-    height: auto;
-    min-height: 50vh;
-    width: 100vw;
+    min-height: calc(100vh - 5rem);
+    width: 100%;
     max-width: 75rem;
     margin: 0 auto;
+    padding: 7rem 3rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
     overflow: hidden;
-    position: relative;
-}
-
-.bg {
-    position: absolute;
-    top: -26rem;
-    right: -9vw;
-    z-index: -1;
-    object-fit: cover;
-    height: 100vh;
 }
 
 .introContent {
-    height: auto;
-    padding: 10.5rem 1rem;
-    padding-left: 3rem;
-    width: 100vw;
-    padding: rem;
-    font-size: 3rem;
-    font-weight: 700;
+    flex: 1 1 34rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .hello {
     font-size: 1.75rem;
-    font-weight: 100;
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+}
+
+.introText {
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .introName {
     color: #77520d;
 }
 
+.introRole {
+    color: #111111;
+}
+
 .introPara {
-    font-size: medium;
+    margin-top: 1.5rem;
+    max-width: 38rem;
+    font-size: 1.2rem;
     font-weight: 300;
-    letter-spacing: 1px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
     color: #333333;
+}
+
+.introMedia {
+    flex: 0 1 24rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: stretch;
+}
+
+.bg {
+    width: min(100%, 26rem);
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .btn {
     background: #5a260e;
-    color: white;
-    margin: 1rem 0;
-    padding: 0.75rem 1.5rem;
+    color: #ffffff;
+    margin-top: 2rem;
+    padding: 0.9rem 1.75rem;
     border: none;
     border-radius: 2rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-
-
-@media screen and (max-width:840px) {
-    .bg {
-        right: -10vw
+@media screen and (max-width: 840px) {
+    #intro {
+        min-height: auto;
+        padding: 6.5rem 1.5rem 2.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
     }
 
     .introContent {
-        font-size: 10vw;
+        flex-basis: auto;
     }
 
     .hello {
-        font-size: 4.5vw;
+        font-size: 1.35rem;
     }
 
+    .introPara {
+        font-size: 1rem;
+    }
+
+    .introMedia {
+        width: 100%;
+        flex-basis: auto;
+        justify-content: center;
+    }
+
+    .bg {
+        width: min(85vw, 24rem);
+    }
 }
 
-@media screen and (max-width:480px) {
-    .bg {
-        right: -20vw
+@media screen and (max-width: 480px) {
+    #intro {
+        padding: 6rem 1rem 2rem;
+    }
+
+    .introText {
+        font-size: clamp(2.5rem, 12vw, 3.5rem);
+    }
+
+    .introPara {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 14rem;
     }
 }
