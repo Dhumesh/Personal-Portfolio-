@@ -1,5 +1,4 @@
 #intro {
-    min-height: calc(100vh - 5rem);
     width: 100%;
     max-width: 75rem;
     margin: 0 auto;
@@ -17,6 +16,11 @@
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    max-width: 42rem;
+    padding: 2.75rem 2.5rem;
+    background: linear-gradient(135deg, #fffaf3 0%, #f5ede1 100%);
+    border-radius: 2rem;
+    box-shadow: 0 1.5rem 3rem rgba(90, 38, 14, 0.12);
 }
 
 .hello {
@@ -78,7 +82,6 @@
 
 @media screen and (max-width: 840px) {
     #intro {
-        min-height: auto;
         padding: 6.5rem 1.5rem 2.5rem;
         flex-direction: column;
         align-items: flex-start;
@@ -87,6 +90,9 @@
 
     .introContent {
         flex-basis: auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 2rem 1.5rem;
     }
 
     .hello {
@@ -112,6 +118,11 @@
 @media screen and (max-width: 480px) {
     #intro {
         padding: 6rem 1rem 2rem;
+    }
+
+    .introContent {
+        padding: 1.75rem 1.25rem;
+        border-radius: 1.5rem;
     }
 
     .introText {
