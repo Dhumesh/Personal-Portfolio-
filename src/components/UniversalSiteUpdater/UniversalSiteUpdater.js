@@ -1,6 +1,5 @@
 import React from 'react';
 import './UniversalSiteUpdater.css';
-import video from '../../img/updater.mp4';
 import { Link } from 'react-router-dom';
 
 const UniversalSiteUpdater = () => {
@@ -14,12 +13,6 @@ const UniversalSiteUpdater = () => {
             <p className="updater-tech">
                 <strong>Tools & Technologies:</strong> PHP – Backend file handling, HTML, CSS, JavaScript – Frontend UI. Works locally on XAMPP or any shared hosting.
             </p>
-            <div className="video-container">
-                <video controls className="updater-video">
-                    <source src={video} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            </div>
         </div>
     );
 }

@@ -7,9 +7,9 @@ const BlogModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="modalOverlay" onClick={onClose}>
-      <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-        <button className="closeBtn" onClick={onClose}>✕</button>
+    <div className="blogModalOverlay" onClick={onClose}>
+      <div className="blogModalContent" onClick={(e) => e.stopPropagation()}>
+        <button className="blogCloseBtn" onClick={onClose}>✕</button>
         
         <article className="blogPost">
           <div className="blogHeader">

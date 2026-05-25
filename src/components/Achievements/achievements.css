@@ -73,18 +73,22 @@
 
 .readMoreLink {
     display: inline-block;
-    color: #ff004f;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: #8B4513;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    border-bottom: 2px solid #ff004f;
+    border-bottom: 2px solid #8B4513;
+    cursor: pointer;
     padding-bottom: 0.2rem;
 }
 
 .readMoreLink:hover {
-    color: #ff6b9f;
-    border-bottom-color: #ff6b9f;
+    color: #A0522D;
+    border-bottom-color: #A0522D;
     transform: translateX(5px);
 }
 

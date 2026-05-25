@@ -9,6 +9,9 @@ import Portfolio5 from '../../img/portfolio-5.png';
 import Portfolio6 from '../../img/portfolio-6.png';
 import Portfolio7 from '../../img/portfolio-7.png';
 import Portfolio8 from '../../img/portofolio-8.png';
+import Portfolio9 from '../../img/portfolio-9.png';
+import Portfolio10 from '../../img/p10.png';
+import Portfolio11 from '../../img/p11.png';
 
 const Works = () => {
   const [showMore, setShowMore] = useState(false);
@@ -69,6 +72,27 @@ const Works = () => {
       title: "Personal Portfolio",
       description: "A responsive React portfolio with smooth navigation, project highlights, and contact details.",
       link: "https://github.com/Dhumesh/Personal-Portfolio-.git"
+    },
+    {
+      id: 9,
+      image: Portfolio9,
+      title: "Smart Healthcare Platform",
+      description: "Microservices-based smart healthcare and telemedicine platform with appointment booking, video consultations, payments, notifications, and secure role-based access.",
+      link: "https://github.com/LEULEX-404/smart-healthcare-platform.git"
+    },
+    {
+      id: 10,
+      image: Portfolio10,
+      title: "Remote Health Tracker and Alert System",
+      description: "MERN-based remote health tracker for real-time patient monitoring and alerts.",
+      link: "https://github.com/LEULEX-404/Health_Tracker.git"
+    },
+    {
+      id: 11,
+      image: Portfolio11,
+      title: "TaskFlow",
+      description: "Full-stack MERN TODO management app with auth, JWT-secured tasks, admin controls, CSV reporting, Swagger docs, and a responsive UI.",
+      link: "https://github.com/Dhumesh/hiring-fullstack-todo.git"
     }
   ];
 

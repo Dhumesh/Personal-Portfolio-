@@ -11,14 +11,21 @@
 .introContent {
     width: 100%;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
     text-align: left;
+    gap: 2.5rem;
     padding: 3rem;
     background: linear-gradient(135deg, #fffaf3 0%, #f5ede1 100%);
     border-radius: 2rem;
     box-shadow: 0 1.5rem 3rem rgba(90, 38, 14, 0.12);
+}
+
+.introTextWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hello {
@@ -70,6 +77,16 @@
 
     .introContent {
         padding: 2rem 1.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    .introImageWrapper {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .introImage {
+        max-width: 100%;
     }
 
     .hello {
@@ -80,6 +97,9 @@
         font-size: 1rem;
     }
 
+    .introImage {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 480px) {

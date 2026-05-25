@@ -67,8 +67,8 @@
 }
 
 .tabBtn.active {
-    color: #ff004f;
-    border-bottom-color: #ff004f;
+    color: #8B4513;
+    border-bottom-color: #8B4513;
 }
 
 .skillsContainer {
@@ -101,7 +101,7 @@
 
 .skillTagWithLogo:hover {
     transform: translateY(-5px);
-    background: rgba(255, 0, 79, 0.05);
+    background: rgba(139, 69, 19, 0.05);
 }
 
 .skillTag {
@@ -119,9 +119,9 @@
 
 .skillTag:hover {
     transform: translateY(-3px);
-    border-color: #ff004f;
-    color: #ff004f;
-    box-shadow: 0 5px 15px rgba(255, 0, 79, 0.15);
+    border-color: #8B4513;
+    color: #8B4513;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.15);
 }
 
 .experienceList {
@@ -136,7 +136,7 @@
     background: #f5f5f5;
     padding: 1.5rem;
     border-radius: 0.5rem;
-    border-left: 4px solid #ff004f;
+    border-left: 4px solid #8B4513;
     text-align: left;
 }
 
