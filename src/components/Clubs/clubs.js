@@ -8,20 +8,20 @@ const Clubs = () => {
   const clubs = [
     {
       id: 1,
-      name: "MS Club of SLIIT",
-      description: "Member",
+      name: "MicroSoft Club of SLIIT",
+      description: "Commitee Member",
       image: require('../../img/ms_club.png')
     },
     {
       id: 2,
-      name: "MS Club of SLIIT",
-      description: "Alpha Member",
-      image: require('../../img/ms_club.png')
+      name: "SLIIT Software Engineering Student Community",
+      description: "Volunteer",
+      image: require('../../img/sesc.png')
     },
     {
       id: 3,
       name: "SLIIT Women In FOSS Community",
-      description: "Volunteer",
+      description: "Member",
       image: require('../../img/foss.png')
     },
     {
@@ -41,12 +41,6 @@ const Clubs = () => {
       name: "SLIIT Gavel Club",
       description: "Member",
       image: require('../../img/sliitgavel.jpg')
-    },
-    {
-      id: 7,
-      name: "Leo Club of Colombo Centrum",
-      description: "Member",
-      image: require('../../img/leo.png')
     },
     {
       id: 8,

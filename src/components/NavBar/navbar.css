@@ -20,6 +20,11 @@
     width: 4rem;
 }
 
+.logoLink{
+    display: flex;
+    align-items: center;
+}
+
 .desktopMenu{
     display: flex;
     align-items: center;
@@ -33,12 +38,16 @@
     align-items: center;
     padding: 0.5rem;
     transition: all 0.3s ease;
+    border-radius: 0.5rem;
 }
 
 .desktopMenuListItem:hover{
     color: rgb(87, 87, 6);
-    padding-bottom: 0.5rem;
-    border-bottom: 8px solid rgb(58, 58, 4);
+}
+
+.desktopMenuListItem.active{
+    color: rgb(58, 58, 4);
+    font-weight: 600;
 }
 
 .desktopMenuBtn{
@@ -113,6 +122,10 @@
 
 .listItem:hover{
     background: rgb(50, 50, 50);
+    color: rgb(226, 226, 105);
+}
+
+.listItem.active{
     color: rgb(226, 226, 105);
 }
 

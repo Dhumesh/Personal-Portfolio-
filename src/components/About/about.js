@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './about.css';
+import ifLogo from '../../img/if.png';
+import insfraLogo from '../../img/insfra.png';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('technical');
@@ -9,7 +11,10 @@ const About = () => {
     { name: 'CSS', logo: null },
     { name: 'JavaScript', logo: null },
     { name: 'React', logo: null },
+    { name: 'React Native', logo: null },
     { name: 'Tailwind CSS', logo: null },
+    { name: 'Bootstrap', logo: null },
+    { name: 'WordPress', logo: null },
     { name: 'Java', logo: null },
     { name: 'Python', logo: null },
     { name: 'C', logo: null },
@@ -31,19 +36,30 @@ const About = () => {
     { name: 'Swagger', logo: null },
     { name: 'Postman', logo: null },
     { name: 'MongoDB', logo: null },
-    { name: 'MySQL', logo: null }
+    { name: 'MySQL', logo: null },
+    { name: 'Oracle', logo: null }
   ];
 
   const softSkills = ['Time Management', 'Self-Motivation', 'Effective Communication', 'Self-Discipline', 'Problem-Solving', 'Critical Thinking', 'Adaptability', 'Flexibility'];
 
   const experience = [
     {
-      title: 'Software Engineering Intern',
-      description: 'Insfra Technologies (Pvt) Ltd. | Jan 2026 - Present'
+      title: 'Web Developer Intern',
+      company: 'IF Solutions (Pvt) Ltd.',
+      period: 'Jul 2026 - Present',
+      logo: ifLogo
+    },
+    {
+      title: 'Full Stack Web Developer Intern',
+      company: 'Insfra Technologies (Pvt) Ltd.',
+      period: 'Jan 2026 - Jul 2026',
+      logo: insfraLogo
     },
     {
       title: 'Entrepreneurship Trainee',
-      description: 'Insfra Technologies (Pvt) Ltd. | Dec 2025 - Jan 2026'
+      company: 'Insfra Technologies (Pvt) Ltd.',
+      period: 'Dec 2025 - Jan 2026',
+      logo: insfraLogo
     }
   ];
 
@@ -101,8 +117,12 @@ const About = () => {
               <div className="experienceList">
                 {experience.map((exp, index) => (
                   <div key={index} className="experienceItem">
-                    <h3>{exp.title}</h3>
-                    <p>{exp.description}</p>
+                    <img className="experienceLogo" src={exp.logo} alt={`${exp.company} logo`} />
+                    <div className="experienceDetails">
+                      <h3>{exp.title}</h3>
+                      <p>{exp.company}</p>
+                      <p>{exp.period}</p>
+                    </div>
                   </div>
                 ))}
               </div>
