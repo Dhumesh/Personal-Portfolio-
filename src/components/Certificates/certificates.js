@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import './certificates.css';
 
 const certificates = [
@@ -135,6 +136,21 @@ const Certificates = () => {
     }
   }, [currentIndex, visibleCards]);
 
+  useEffect(() => {
+    if (!selectedCert) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setSelectedCert(null);
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [selectedCert]);
+
   const handlePrev = () => {
     const maxIndex = Math.max(certificates.length - visibleCards, 0);
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? maxIndex : prevIndex - 1));
@@ -163,11 +179,11 @@ const Certificates = () => {
 
         <div className="certificatesCarousel">
           {certificates.slice(currentIndex, currentIndex + visibleCards).map((cert) => (
-            <div
+            <button
               key={cert.id}
               className="certificateCarouselCard"
               onClick={() => setSelectedCert(cert)}
-              style={{ cursor: 'pointer' }}
+              aria-label={`View certificate: ${cert.title}`}
             >
               <div className="certificateCardImage">
                 <img src={cert.image} alt={cert.title} />
@@ -176,8 +192,9 @@ const Certificates = () => {
                 <h3>{cert.title}</h3>
                 <p className="issuer">{cert.issuer}</p>
                 <p className="date">{cert.date}</p>
+                <span className="certificateViewPrompt">View certificate <span aria-hidden="true">&#8599;</span></span>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
@@ -190,9 +207,9 @@ const Certificates = () => {
         </button>
       </div>
 
-      {selectedCert && (
+      {selectedCert && createPortal(
         <div className="certificateModalOverlay" onClick={() => setSelectedCert(null)}>
-          <div className="certificateModal" onClick={(e) => e.stopPropagation()}>
+          <div className="certificateModal" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle" onClick={(e) => e.stopPropagation()}>
             <button
               className="closeButton"
               onClick={() => setSelectedCert(null)}
@@ -206,9 +223,19 @@ const Certificates = () => {
                 alt={selectedCert.title}
                 className="modalImage"
               />
+              <div className="modalDetails">
+                <p className="modalEyebrow">Certificate</p>
+                <h3 id="certificateModalTitle">{selectedCert.title}</h3>
+                <p className="modalIssuer">{selectedCert.issuer} <span aria-hidden="true">&#183;</span> {selectedCert.date}</p>
+                <p className="modalDescription">{selectedCert.description}</p>
+                <a className="openCertificateLink" href={selectedCert.image} target="_blank" rel="noreferrer">
+                  Open full size <span aria-hidden="true">&#8599;</span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );

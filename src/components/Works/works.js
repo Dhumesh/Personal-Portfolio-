@@ -18,6 +18,34 @@ const Works = () => {
 
   const projects = [
     {
+      id: 9,
+      image: Portfolio9,
+      title: "Smart Healthcare Platform",
+      description: "Microservices-based smart healthcare and telemedicine platform with appointment booking, video consultations, payments, notifications, and secure role-based access.",
+      link: "https://github.com/LEULEX-404/smart-healthcare-platform.git"
+    },
+    {
+      id: 10,
+      image: Portfolio10,
+      title: "Remote Health Tracker and Alert System",
+      description: "MERN-based remote health tracker for real-time patient monitoring and alerts.",
+      link: "https://github.com/LEULEX-404/Health_Tracker.git"
+    },
+    {
+      id: 8,
+      image: Portfolio8,
+      title: "Personal Portfolio",
+      description: "A responsive React portfolio with smooth navigation, project highlights, and contact details.",
+      link: "https://github.com/Dhumesh/Personal-Portfolio-.git"
+    },
+    {
+      id: 6,
+      image: Portfolio6,
+      title: "Universal Site Updater",
+      description: "A lightweight PHP tool for syncing and updating website files without a database, compatible with shared hosting.",
+      link: "https://github.com/Dhumesh/Universal-Site-Updater.git"
+    },
+    {
       id: 1,
       image: Portfolio1,
       title: "Online Auction System",
@@ -53,39 +81,11 @@ const Works = () => {
       link: "https://github.com/Dhumesh/BrewMaster.git"
     },
     {
-      id: 6,
-      image: Portfolio6,
-      title: "Universal Site Updater",
-      description: "A lightweight PHP tool for syncing and updating website files without a database, compatible with shared hosting.",
-      link: "https://github.com/Dhumesh/Universal-Site-Updater.git"
-    },
-    {
       id: 7,
       image: Portfolio7,
       title: "Collaborative Note-Taking App",
       description: "A MERN note-taking app with JWT auth, search, collaborators, and a rich text editor.",
       link: "https://github.com/Dhumesh/Note-Taking-web-app.git"
-    },
-    {
-      id: 8,
-      image: Portfolio8,
-      title: "Personal Portfolio",
-      description: "A responsive React portfolio with smooth navigation, project highlights, and contact details.",
-      link: "https://github.com/Dhumesh/Personal-Portfolio-.git"
-    },
-    {
-      id: 9,
-      image: Portfolio9,
-      title: "Smart Healthcare Platform",
-      description: "Microservices-based smart healthcare and telemedicine platform with appointment booking, video consultations, payments, notifications, and secure role-based access.",
-      link: "https://github.com/LEULEX-404/smart-healthcare-platform.git"
-    },
-    {
-      id: 10,
-      image: Portfolio10,
-      title: "Remote Health Tracker and Alert System",
-      description: "MERN-based remote health tracker for real-time patient monitoring and alerts.",
-      link: "https://github.com/LEULEX-404/Health_Tracker.git"
     },
     {
       id: 11,

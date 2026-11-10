@@ -64,6 +64,7 @@
 }
 
 .certificateCarouselCard {
+    appearance: none;
     background: #f5f5f5;
     border-radius: 1rem;
     overflow: hidden;
@@ -72,6 +73,10 @@
     width: 280px;
     flex-shrink: 0;
     border-top: 4px solid #c0c4c7;
+    padding: 0;
+    font: inherit;
+    text-align: inherit;
+    cursor: pointer;
 }
 
 .certificateCarouselCard:hover {
@@ -115,6 +120,149 @@
 .certificateCarouselCard .date {
     font-size: 0.75rem;
     color: #666666;
+}
+
+.certificateViewPrompt {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    margin-top: 1rem;
+    color: #704015;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.certificateModalOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(16, 19, 24, 0.82);
+    backdrop-filter: blur(8px);
+    animation: certificateFadeIn 180ms ease-out;
+}
+
+.certificateModal {
+    position: relative;
+    width: min(100%, 1100px);
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 1.25rem;
+    background: #fff;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    animation: certificateRiseIn 220ms ease-out;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.94);
+    color: #222;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.closeButton:hover {
+    background: #f1e8df;
+}
+
+.modalContent {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.8fr);
+    align-items: center;
+}
+
+.modalImage {
+    display: block;
+    width: 100%;
+    max-height: 82vh;
+    padding: 1.25rem;
+    object-fit: contain;
+    background: #f4f5f6;
+}
+
+.modalDetails {
+    padding: 2.5rem;
+    text-align: left;
+}
+
+.modalEyebrow {
+    margin: 0 0 0.75rem;
+    color: #8b4513;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.modalDetails h3 {
+    margin: 0 0 0.75rem;
+    color: #1a1a1a;
+    font-size: 1.6rem;
+    line-height: 1.25;
+}
+
+.modalIssuer {
+    margin: 0 0 1.25rem;
+    color: #646464;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.modalDescription {
+    margin: 0 0 1.5rem;
+    color: #3f3f3f;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.openCertificateLink {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: #704015;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.openCertificateLink:hover {
+    background: #512d10;
+    transform: translateY(-1px);
+}
+
+.certificateCarouselCard:focus-visible,
+.carouselArrow:focus-visible,
+.closeButton:focus-visible,
+.openCertificateLink:focus-visible {
+    outline: 3px solid #a15e25;
+    outline-offset: 3px;
+}
+
+@keyframes certificateFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes certificateRiseIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.99); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* Main Certificate Display */
@@ -188,6 +336,29 @@
 .listItemContent p {
     font-size: 0.8rem;
     color: #666666;
+}
+
+@media (max-width: 720px) {
+    .certificateModalOverlay {
+        padding: 1rem;
+    }
+
+    .modalContent {
+        grid-template-columns: 1fr;
+    }
+
+    .modalImage {
+        max-height: 55vh;
+        padding: 3.5rem 1rem 1rem;
+    }
+
+    .modalDetails {
+        padding: 1.5rem;
+    }
+
+    .modalDetails h3 {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 1024px) {

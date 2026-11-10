@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import './blogModal.css';
 import mini1 from '../../img/min1.jpg';
 import hac from '../../img/hac.jpg';
 
 const BlogModal = ({ isOpen, onClose }) => {
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div className="blogModalOverlay" onClick={onClose}>
-      <div className="blogModalContent" onClick={(e) => e.stopPropagation()}>
+      <div className="blogModalContent" role="dialog" aria-modal="true" aria-labelledby="blogModalTitle" onClick={(e) => e.stopPropagation()}>
         <button className="blogCloseBtn" onClick={onClose}>✕</button>
         
         <article className="blogPost">
@@ -84,7 +102,8 @@ const BlogModal = ({ isOpen, onClose }) => {
           </section>
         </article>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
