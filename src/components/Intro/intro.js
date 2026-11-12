@@ -18,11 +18,12 @@ const Intro = () => {
             opportunities to gain real experience.
           </p>
           <a
+            className="btn"
             href="https://www.linkedin.com/in/dhumeshpriya05/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="btn">Let&apos;s Connect</button>
+            Let&apos;s Connect
           </a>
         </div>
       </div>

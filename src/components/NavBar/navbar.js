@@ -28,13 +28,21 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <img
-        src={menu}
-        alt="Menu"
+      <button
+        type="button"
         className="mobMenu"
-        onClick={() => setShowMenu(!showMenu)}
-      />
-      <div className="navMenu" style={{ display: showMenu ? 'flex' : 'none' }}>
+        aria-label={showMenu ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={showMenu}
+        aria-controls="mobile-navigation"
+        onClick={() => setShowMenu((isOpen) => !isOpen)}
+      >
+        <img src={menu} alt="" aria-hidden="true" />
+      </button>
+      <div
+        id="mobile-navigation"
+        className="navMenu"
+        style={{ display: showMenu ? 'flex' : 'none' }}
+      >
         {sections.map(([id, label]) => (
           <Link
             key={id}
@@ -50,12 +58,14 @@ const Navbar = () => {
             {label}
           </Link>
         ))}
-        <img
-          src={close}
-          alt="Close"
+        <button
+          type="button"
           className="mobMenuClose"
+          aria-label="Close navigation menu"
           onClick={() => setShowMenu(false)}
-        />
+        >
+          <img src={close} alt="" aria-hidden="true" />
+        </button>
       </div>
     </nav>
   );

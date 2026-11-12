@@ -1,13 +1,13 @@
 #works {
     margin: 0 auto;
-    min-height: calc(100vh - 4rem);
+    min-height: auto;
     width: 100%;
     max-width: 65rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
+    padding: 3rem 1rem;
 }
 
 .worksTitle {

@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 75rem;
     margin: 0 auto;
-    padding: 7rem 3rem 3rem;
+    padding: 3rem 3rem 2rem;
     display: flex;
     justify-content: flex-start;
     overflow: hidden;
@@ -12,11 +12,10 @@
     width: 100%;
     max-width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
-    text-align: left;
-    gap: 2.5rem;
-    padding: 3rem;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    padding: clamp(1.75rem, 4vw, 3rem);
     background: linear-gradient(135deg, #fffaf3 0%, #f5ede1 100%);
     border-radius: 2rem;
     box-shadow: 0 1.5rem 3rem rgba(90, 38, 14, 0.12);
@@ -26,6 +25,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 0;
+    text-align: left;
 }
 
 .hello {
@@ -35,9 +36,9 @@
 }
 
 .introText {
-    font-size: clamp(3rem, 5vw, 5rem);
+    font-size: clamp(2.5rem, 4.5vw, 4.25rem);
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1.1;
     margin: 0;
 }
 
@@ -60,6 +61,10 @@
 }
 
 .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
     background: #5a260e;
     color: #ffffff;
     margin-top: 2rem;
@@ -68,61 +73,96 @@
     border-radius: 2rem;
     font-weight: 600;
     cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #713708;
+    transform: translateY(-2px);
 }
 
 @media screen and (max-width: 840px) {
     #intro {
-        padding: 6.5rem 1.5rem 2.5rem;
+        padding: 2rem 1.5rem 1.5rem;
     }
 
     .introContent {
-        padding: 2rem 1.5rem;
-        grid-template-columns: 1fr;
-    }
-
-    .introImageWrapper {
-        max-width: 100%;
-        padding: 0;
-    }
-
-    .introImage {
-        max-width: 100%;
-    }
-
-    .hello {
-        font-size: 1.35rem;
-    }
-
-    .introPara {
-        font-size: 1rem;
-    }
-
-    .introImage {
-        max-width: 100%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #intro {
-        padding: 6rem 1rem 2rem;
-    }
-
-    .introContent {
-        padding: 1.75rem 1.25rem;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+        padding: 1.75rem;
         border-radius: 1.5rem;
     }
 
     .introText {
-        font-size: clamp(2.5rem, 12vw, 3.5rem);
+        font-size: clamp(2.25rem, 5vw, 3.25rem);
+    }
+
+    .hello {
+        font-size: 1.25rem;
     }
 
     .introPara {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    #intro {
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    .introContent {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.5rem;
+        padding: 1.25rem 1.25rem 1.5rem;
+        border-radius: 1.25rem;
+    }
+
+    .introTextWrapper {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hello {
+        margin-bottom: 0.4rem;
+    }
+
+    .introText {
+        font-size: clamp(2rem, 8.5vw, 3rem);
+        line-height: 1.12;
+    }
+
+    .introPara {
+        margin-top: 0.8rem;
         font-size: 0.95rem;
+    }
+
+    .btn {
+        align-self: center;
+        margin-top: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .introContent {
+        padding: 1rem 1rem 1.25rem;
+    }
+
+    .introText {
+        font-size: clamp(1.8rem, 8.5vw, 2.5rem);
+    }
+
+    .introPara {
+        margin-top: 0.7rem;
+        font-size: 0.9rem;
         line-height: 1.6;
     }
 
     .btn {
         width: 100%;
-        max-width: 14rem;
+        max-width: 15rem;
     }
 }

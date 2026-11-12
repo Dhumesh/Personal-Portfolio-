@@ -1,8 +1,9 @@
 #contactPage {
-    min-height: calc(100vh - 4rem);
+    min-height: auto;
     width: 100%;
     max-width: 60rem;
     margin: 0 auto;
+    padding: 3rem 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;

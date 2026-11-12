@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8rem 1.5rem 3rem;
+    padding: 4rem 1.5rem 2rem;
 }
 
 .aboutContainer {
@@ -134,13 +134,44 @@
 
 .experienceItem {
     background: #f5f5f5;
-    padding: 1.5rem 1.75rem;
     border-radius: 0.5rem;
     border-left: 4px solid #8B4513;
+    overflow: hidden;
     text-align: left;
+}
+
+.experienceToggle,
+.experienceStatic {
+    width: 100%;
+    padding: 1.5rem 1.75rem;
     display: flex;
     align-items: center;
     gap: 1.25rem;
+}
+
+.experienceToggle {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.experienceToggle:hover {
+    background: rgba(139, 69, 19, 0.05);
+}
+
+.experienceToggle:focus-visible {
+    outline: 3px solid #8B4513;
+    outline-offset: -3px;
+}
+
+.experienceRole,
+.experienceCompany,
+.experiencePeriod {
+    display: block;
 }
 
 .experienceLogo {
@@ -157,8 +188,10 @@
 
 .experienceDetails {
     min-width: 0;
+    flex: 1;
 }
 
+.experienceRole,
 .experienceItem h3 {
     font-size: 1.1rem;
     font-weight: 600;
@@ -166,11 +199,36 @@
     margin-bottom: 0.5rem;
 }
 
+.experienceCompany,
+.experiencePeriod,
 .experienceItem p {
     font-size: 0.9rem;
     color: #666666;
     line-height: 1.6;
     margin: 0.15rem 0 0;
+}
+
+.experienceChevron {
+    color: #8B4513;
+    font-size: 1.5rem;
+    line-height: 1;
+    flex: 0 0 auto;
+}
+
+.experienceExpanded {
+    padding: 0 1.75rem 1.5rem 6.5rem;
+    color: #555555;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.experienceExpanded ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.experienceExpanded li + li {
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 1024px) {
@@ -250,6 +308,11 @@
     }
 
     .experienceItem {
+        padding: 0;
+    }
+
+    .experienceToggle,
+    .experienceStatic {
         padding: 1rem;
         gap: 0.9rem;
     }
@@ -258,5 +321,9 @@
         width: 3rem;
         height: 3rem;
         flex-basis: 3rem;
+    }
+
+    .experienceExpanded {
+        padding: 0 1rem 1rem 4.9rem;
     }
 }
